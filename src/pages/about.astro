@@ -1,5 +1,10 @@
 ---
 const pageTitle = "About Me";
+
+const quote = "The aisling (Irish for 'dream' / 'vision', pronounced [ˈaʃl̠ʲəɲ], approximately /ˈæʃlɪŋ/ ASH-ling), or vision poem, is a mythopoeic poetic genre that developed during the late 17th and 18th centuries in Irish language poetry.";
+const quoteLink = "https://en.wikipedia.org/wiki/Aisling";
+
+const skills = ["HTML", "CSS", "C", "C++", "Docker"];
 ---
 
 <html lang="en">
@@ -18,9 +23,9 @@ const pageTitle = "About Me";
 
 		<h1>Aisling Fontaine</h1>
 
-		<blockquote cite="https://en.wikipedia.org/wiki/Aisling">
-      The aisling (Irish for 'dream' / 'vision', pronounced [ˈaʃl̠ʲəɲ], approximately /ˈæʃlɪŋ/ ASH-ling), or vision poem, is a mythopoeic poetic genre that developed during the late 17th and 18th centuries in Irish language poetry.
-		</blockquote>
+    <blockquote cite="{quoteLink}">
+      {quote}
+    </blockquote>
 
     <h2>{pageTitle}</h2>
 
@@ -29,5 +34,12 @@ const pageTitle = "About Me";
     <p>I am currently studying at 42 school in Switzerland, happy to learn low-level concepts in a peer-learning environment.</p>
 
     <p>This is supposed to be my blog, but as you can imagine, this is still very much a work in progress, so come back regularly for updates!</p>
+
+    <h2>My Skills</h2>
+
+    <p>Here are some of my skills:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
 	</body>
 </html>

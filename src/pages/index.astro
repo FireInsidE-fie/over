@@ -1,5 +1,8 @@
 ---
-const pageTitle = "Dreams of Ash"
+const pageTitle = "Dreams of Ash";
+
+const welcoming = true;
+const welcomeEmote = "https://cdn.discordapp.com/emojis/1095012855285293067.webp?size=96&animated=true"
 ---
 
 <html lang="en">
@@ -18,5 +21,9 @@ const pageTitle = "Dreams of Ash"
 
 		<h1>{pageTitle}</h1>
 		<h2>Aisling Fontaine's website</h1>
+
+		{welcoming &&
+			<img src={welcoming && welcomeEmote} alt="A welcoming GIF!"/>
+		}
 	</body>
 </html>
