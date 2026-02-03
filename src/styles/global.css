@@ -23,3 +23,23 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
+
+a {
+  color: #7FBBB3;
+}
+
+a:visited {
+  color: #D699B6;
+}
+
+a:hover {
+  color: #DBBC7F;
+}
+
+a:focus {
+  color: #DBBC7F;
+}
+
+a:active {
+  color: #E67E80;
+}
