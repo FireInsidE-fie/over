@@ -59,10 +59,6 @@ a {
   color: var(--ef-blue);
 }
 
-a:visited {
-  color: var(--ef-purple);
-}
-
 a:hover {
   color: var(--ef-yellow);
 }
@@ -79,7 +75,6 @@ a:active {
 
 .nav-links {
   width: 100%;
-  /* display: none; */
   margin: 0;
 }
 
