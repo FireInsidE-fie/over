@@ -5,6 +5,7 @@ const quote = "The aisling (Irish for 'dream' / 'vision', pronounced [ˈaʃl̠ʲ
 const quoteLink = "https://en.wikipedia.org/wiki/Aisling";
 
 const skills = ["HTML", "CSS", "C", "C++", "Docker"];
+const skillColor = "green";
 ---
 
 <html lang="en">
@@ -15,14 +16,14 @@ const skills = ["HTML", "CSS", "C", "C++", "Docker"];
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
-    <style>
+    <style define:vars={{skillColor}}>
       h1 {
         color: darkgreen;
         font-size: 4rem;
       }
 
       .skill {
-        color: green;
+        color: {skillColor};
         font-weight: bold;
       }
     </style>
