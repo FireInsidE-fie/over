@@ -17,7 +17,7 @@ The Astro framework looks for `.astro` or `.md` files in the `src/pages/` direct
 
 Any static assets, like images, are placed in the `public/` directory.
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
