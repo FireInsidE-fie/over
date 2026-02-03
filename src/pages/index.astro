@@ -29,16 +29,8 @@ const welcomeEmote = "https://cdn.discordapp.com/emojis/1095012855285293067.webp
     }
     <Footer />
 
-    <!-- Script to hide and show nav bar on mobile -->
     <script>
-      const menu = document.querySelector('.menu');
-
-      console.log(menu);
-
-      menu?.addEventListener('click', () => {
-        const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-        menu.setAttribute('aria-expanded', `${!isExpanded}`);
-      });
+      import "../scripts/menu.js";
     </script>
   </body>
 </html>
