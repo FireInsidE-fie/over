@@ -1,7 +1,8 @@
 ---
-const socialsURL = "https://linktr.ee/stellaaa.sh"
+import Social from './Social.astro';
 ---
-<!-- TODO: Might be nice to have direct icons, instead of offloading my socials to my linktr.ee -->
 <footer>
-  <p>Follow my adventures on <a href={socialsURL}>my socials</a>!</p>
+  <p>Follow my adventures on my socials!</p>
+  <Social platform="Github" link="https://github.com/stellaaash" />
+  <Social platform="Bluesky" link="https://bsky.app/profile/stellaaash.bsky.social" />
 </footer>
