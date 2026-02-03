@@ -73,6 +73,16 @@ a:active {
 
 /* Nav styles */
 
+.menu {
+  background-color: var(--ef-bg-5);
+  border: none;
+  color: var(--ef-fg);
+  font-family: Vollkorn, serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
 .nav-links {
   width: 100%;
   margin: 0;
@@ -88,6 +98,10 @@ a:active {
   text-transform: uppercase;
 }
 
+:has(.menu[aria-expanded="false"]) .nav-links {
+  display: none;
+}
+
 /* Larger screens */
 @media screen and (min-width: 636px) {
   .nav-links {
@@ -101,5 +115,9 @@ a:active {
   .nav-links a {
     display: inline-block;
     padding: 15px 20px;
+  }
+
+  .menu {
+    display: none;
   }
 }
