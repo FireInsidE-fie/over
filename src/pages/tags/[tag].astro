@@ -2,20 +2,34 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', {eager: true }));
+
   return [
-    { params: { tag: "astro"} },
-    { params: { tag: "blogging"} },
-    { params: { tag: "c"} },
-    { params: { tag: "c++"} },
-    { params: { tag: "webdev"} },
-    { params: { tag: "docker"} },
-    { params: { tag: "osdev"} },
-    { params: { tag: "music"} },
+    { params: { tag: "astro"}, props: {posts: allPosts} },
+    { params: { tag: "blogging"}, props: {posts: allPosts} },
+    { params: { tag: "c"}, props: {posts: allPosts} },
+    { params: { tag: "c++"}, props: {posts: allPosts} },
+    { params: { tag: "webdev"}, props: {posts: allPosts} },
+    { params: { tag: "docker"}, props: {posts: allPosts} },
+    { params: { tag: "osdev"}, props: {posts: allPosts} },
+    { params: { tag: "music"}, props: {posts: allPosts} },
   ];
 }
 
 const { tag } = Astro.params;
+const { posts } = Astro.props;
+const filteredPosts = posts.filter((post: any) => post.frontmatter.tags?.includes(tag));
 ---
 <BaseLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
+  <ul>
+    {
+      filteredPosts
+        .map(
+        (post: any) =>
+          <li><a href={post.url}>{post.frontmatter.pubDate.toString().slice(0,10)} -- {post.frontmatter.title}</a></li>
+        )
+        .reverse()
+    }
+  </ul>
 </BaseLayout>
