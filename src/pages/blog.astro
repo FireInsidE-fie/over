@@ -1,16 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Get all .md posts in the posts directory
 const allPosts = Object.values(import.meta.glob('./posts/*.md', {eager: true }));
 
 const pageTitle = "Blog of Ash";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <p>This is where all my posts talking about stuff that interests me regarding my learning will go.</p>
-
   <!-- Dynamic list of all .md posts -->
+  <h2>List of posts</h2>
   <ul>
     {
       allPosts
